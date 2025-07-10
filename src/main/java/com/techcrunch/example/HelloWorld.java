@@ -12,7 +12,7 @@ public class HelloWorld {
 
         // Get or create a cache named "hello"
         NamedCache<String, String> cache = CacheFactory.getCache("hello");
-        NamedCache<Integer, Integer> intCache = CacheFactory.getCache("hello");
+        NamedCache<Integer, Integer> intCache = CacheFactory.getCache("numbers");
 
         // Put a value into the cache
         cache.put("greeting", "Hello, Coherence!");
