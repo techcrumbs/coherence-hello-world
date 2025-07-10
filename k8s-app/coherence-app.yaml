@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coherence-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coherence-app
+  template:
+    metadata:
+      labels:
+        app: coherence-app
+    spec:
+      containers:
+        - name: coherence
+          image: ghcr.io/techcrumbs/coherence-hello-world:0.2-SNAPSHOT
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7574 # default Coherence port
+          env:
+            - name: JAVA_OPTS
+              value: "-Dcoherence.cluster=my-cluster -Dcoherence.wka=coherence-service -Dcoherence.wka.port=7574"  
