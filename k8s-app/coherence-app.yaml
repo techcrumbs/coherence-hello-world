@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: coherence-app
 spec:
+  serviceName: coherence-headless-service
   replicas: 2
   selector:
     matchLabels:
@@ -20,4 +21,4 @@ spec:
             - containerPort: 7574 # default Coherence port
           env:
             - name: JAVA_OPTS
-              value: "-Dcoherence.cluster=my-cluster -Dcoherence.wka=coherence-service -Dcoherence.wka.port=7574"  
+              value: "-Dcoherence.cluster=my-cluster -Dcoherence.wka=coherence-headless-service -Dcoherence.wka.port=7574"  
