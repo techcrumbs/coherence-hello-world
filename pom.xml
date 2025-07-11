@@ -55,6 +55,13 @@
         <scope>runtime</scope>
     </dependency>
 
+    <!-- Read application.yaml -->
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
     <!-- Annotations -->
     <dependency>
         <groupId>jakarta.annotation</groupId>
