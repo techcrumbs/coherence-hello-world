@@ -1,6 +1,26 @@
 micronaut:
   server:
     context-path: /my-service
+  reactor:
+    context-propagation: true
+
+datasources:
+  default:
+    url: jdbc:h2:file:./data/devDb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+    dialect: H2
+
+jpa:
+  default:
+    packages-to-scan:
+      - com.techcrunch.example.dao.entity
+      - com.techcrunch.example.dao.repository
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
 
 coherence:
   session:
