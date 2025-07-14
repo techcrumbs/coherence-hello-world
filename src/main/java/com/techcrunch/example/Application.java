@@ -8,11 +8,7 @@ public class Application {
     
     public static void main(String[] args) {
 
-        // set the ctx in the CacheStoreFactory
-        try (ApplicationContext ctx = ApplicationContext.run()) {
-            AppCacheStoreFactory.init(ctx);
-        }
-
-        Micronaut.run(Application.class);
+        ApplicationContext ctx = Micronaut.run(Application.class);  // Start and retain the context
+        AppCacheStoreFactory.init(ctx);  // Use the live context
     }
 }

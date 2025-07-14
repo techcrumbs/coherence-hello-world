@@ -78,6 +78,16 @@
       </exclusions>
     </dependency>
 
+    <dependency>
+      <groupId>io.micronaut.sql</groupId>
+      <artifactId>micronaut-jdbc-hikari</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
+    </dependency>
+
     <!-- Required for DI at runtime -->
 
     <dependency>
@@ -95,6 +105,13 @@
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-inject-java</artifactId>
       <scope>provided</scope>
+    </dependency>
+
+    <!-- JDBC Driver for H2 -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
     </dependency>
 
     <!-- Logging -->

@@ -2,7 +2,7 @@ package com.techcrunch.example.controllers;
 
 import java.util.Optional;
 
-import com.techcrunch.example.models.Job;
+import com.techcrunch.example.models.JobDto;
 import com.techcrunch.example.services.JobService;
 
 import io.micronaut.http.HttpStatus;
@@ -23,13 +23,13 @@ public class JobController {
     }
 
     @Get(uri = "/{jobId}", produces = MediaType.APPLICATION_JSON)
-    public Optional<Job> getUser(String jobId) {
+    public Optional<JobDto> getUser(String jobId) {
         return jobService.findById(jobId);
     }
 
     @Post(uri = "/", produces = MediaType.APPLICATION_JSON)
     @Status(HttpStatus.CREATED)
-    public Job createUser(@Body Job user) {
+    public JobDto createUser(@Body JobDto user) {
         return jobService.save(user);
     }
 }
