@@ -1,6 +1,5 @@
 package com.techcrunch.example.cachestores;
 
-import com.tangosol.net.BackingMapManagerContext;
 import com.tangosol.net.cache.CacheStore;
 import com.techcrunch.example.dao.repository.JobRepository;
 import io.micronaut.context.ApplicationContext;
@@ -11,8 +10,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class AppCacheStoreFactory {
-
-//  private static ApplicationContext context;
 
   private static JobRepository jobRepository;
 
@@ -31,12 +28,5 @@ public class AppCacheStoreFactory {
 
     throw new RuntimeException("Unknown cache name: " + cacheName);
   }
-
-//  public static CacheStore<?, ?> getStore(String cacheName) {
-//    if ("jobCache".equals(cacheName)) {
-//      return cacheStoreMap.computeIfAbsent(cacheName, k -> new JobStore(null));
-//    }
-//    throw new RuntimeException("Unknown cache name: " + cacheName);
-//  }
 
 }
