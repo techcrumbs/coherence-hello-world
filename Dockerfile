@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/graalvm-ce:ol8-java17
+FROM ghcr.io/graalvm/graalvm-community:21
 
 WORKDIR /app
 COPY target/coherence-hello-world-1.0-SNAPSHOT.jar /app/
