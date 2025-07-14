@@ -17,7 +17,7 @@ public class JobService {
     private NamedCache<String, Job> jobCache;
     
     public Job save(Job job) {
-        jobCache.put(job.getJobId(), job);
+        jobCache.put(job.jobId(), job);
         return job;
     }
 
