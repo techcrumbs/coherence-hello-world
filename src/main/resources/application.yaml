@@ -1,6 +1,8 @@
 micronaut:
   server:
     context-path: /my-service
+  reactor:
+    context-propagation: true
 
 coherence:
   session:

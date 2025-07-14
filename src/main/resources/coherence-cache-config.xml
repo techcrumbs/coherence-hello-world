@@ -45,6 +45,7 @@
                     <write-requeue-threshold>0</write-requeue-threshold>
                 </read-write-backing-map-scheme>
             </backing-map-scheme>
+            <autostart>true</autostart>
         </distributed-scheme>
 
     </caching-schemes>
