@@ -1,24 +1,27 @@
 package com.techcrunch.example.services;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
+import com.tangosol.net.NamedCache;
 import com.techcrunch.example.models.Job;
 
+import io.micronaut.coherence.annotation.Name;
+import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 
 @Singleton
 public class JobService {
 
-    private final Map<String, Job> store = new HashMap<>();
+    @Inject
+    @Name("jobCache")
+    private NamedCache<String, Job> jobCache;
     
     public Job save(Job job) {
-        store.put(job.getJobId(), job);
+        jobCache.put(job.getJobId(), job);
         return job;
     }
 
     public Optional<Job> findById(String jobId) {
-        return Optional.ofNullable(store.get(jobId));
+        return Optional.ofNullable(jobCache.get(jobId));
     }
 }

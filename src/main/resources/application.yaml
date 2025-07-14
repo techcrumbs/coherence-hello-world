@@ -1,3 +1,14 @@
 micronaut:
   server:
     context-path: /my-service
+
+coherence:
+  session:
+    default:
+      config: coherence-cache-config.xml
+      scope: app-scope
+
+jvm:
+  system:
+    property:
+      coherence.console.color: "false"

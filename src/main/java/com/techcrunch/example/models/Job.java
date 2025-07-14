@@ -2,9 +2,11 @@ package com.techcrunch.example.models;
 
 import io.micronaut.core.annotation.Introspected;
 
+import java.io.Serializable;
+
 @Introspected
-public class Job {
-    
+public class Job implements Serializable {
+
     private final String jobId;
 
     private final String reportingProjectId;

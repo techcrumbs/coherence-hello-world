@@ -1,0 +1,7 @@
+<session-config xmlns="http://xmlns.oracle.com/coherence/coherence-session-config">
+  <session>
+    <!-- No session-name means "default session" -->
+    <scope-name>default-scope</scope-name>
+    <configurable-cache-factory-config>cache-config.xml</configurable-cache-factory-config>
+  </session>
+</session-config>
