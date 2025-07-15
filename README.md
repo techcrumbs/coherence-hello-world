@@ -24,7 +24,7 @@
 
 `kubectl -n coherence-hello-world get pods`
 
-## See lods
+## See logs
 
 `kubectl -n coherence-hello-world logs coherence-app-0`
 
