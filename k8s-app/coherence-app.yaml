@@ -15,10 +15,13 @@ spec:
     spec:
       containers:
         - name: coherence
-          image: ghcr.io/techcrumbs/coherence-hello-world:0.2-SNAPSHOT
+          image: ghcr.io/techcrumbs/coherence-hello-world:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 7574 # default Coherence port
+            - name: coherence
+              containerPort: 7574 # default Coherence port
+            - name: rest
+              containerPort: 8080
           env:
             - name: JAVA_OPTS
               value: "-Dcoherence.cluster=my-cluster -Dcoherence.wka=coherence-headless-service -Dcoherence.wka.port=7574"  

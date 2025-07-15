@@ -7,4 +7,5 @@ spec:
   selector:
     app: coherence-app
   ports:
-    - port: 7574
+    - name: tcp-coherence
+      port: 7574
